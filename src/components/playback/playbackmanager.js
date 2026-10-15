@@ -4178,7 +4178,9 @@ export class PlaybackManager {
         if (player?.shuffle) {
             return player.shuffle(shuffleItem);
         }
-        if (shuffleItem.length > 1) {
+        console.info("ShuffleItem:");
+        console.info(shuffleItem);
+        if (shuffleItem.length > 1 && shuffleItem[0].Type === Movie) {
             const shuffleItems = shuffleArray(shuffleItem);
             return this.play({ items: shuffleItems, shuffle: true });
         } else {
